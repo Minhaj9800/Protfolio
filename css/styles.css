@@ -115,8 +115,9 @@ body {
 
 hr {
   margin: 1rem 0;
-  color: inherit;
-  border: 0;
+  /*color: inherit;*/
+  color: black;
+  border: none;
   border-top: 1px solid;
   opacity: 0.25;
 }
