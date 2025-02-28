@@ -82,7 +82,7 @@
   color: #000 !important;
 } */
 li:not(.navbar *), p:not(.navbar *), span:not(.navbar *):not(.text-primary), a:not(.navbar *), h1:not(.navbar *):not(.mb-0), h2:not(.navbar *), h3:not(.navbar *), h4:not(.navbar *), h5:not(.navbar *), h6:not(.navbar *), strong:not(.navbar *), b:not(.navbar *), small:not(.navbar *), .text-muted:not(.navbar *), .text-secondary:not(.navbar *), .blockquote-footer:not(.navbar *) {
-  color: #000 !important;
+  color: #000;
 }
  
   --bs-body-font-family: Muli, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -304,10 +304,11 @@ sup {
 
 a {
   color: var(--bs-link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: var(--bs-link-hover-color);
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]),
@@ -8022,6 +8023,7 @@ fieldset:disabled .btn {
 
 .mb-5 {
   margin-bottom: 3rem !important;
+  color: darkblue;
 }
 
 .mb-auto {
@@ -11322,7 +11324,7 @@ i {
 
 section.resume-section {
   display: flex;
-  align-items: center;
+  align-items: left;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 5rem;
