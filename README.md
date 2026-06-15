@@ -1,69 +1,153 @@
-# [Start Bootstrap - Resume](https://startbootstrap.com/theme/resume/)
+# Minhajur Rahman — Portfolio Website
 
-[Resume](https://startbootstrap.com) is a resume and CV theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a fixed sidebar with content sections to build a simple, yet elegant resume.
+A clean, maintainable personal portfolio. No frameworks, no build step.
+Just three files: `index.html`, `css/style.css`, and `js/data.js` + `js/render.js`.
 
-## Preview
+---
 
-<!-- [![Resume Preview](https://assets.startbootstrap.com/img/screenshots/themes/resume.png)](https://startbootstrap.github.io/startbootstrap-resume/) -->
+## 📁 Project structure
 
-**[View Live Preview](https://startbootstrap.github.io)**
+```
+portfolio/
+├── index.html          ← Page shell (rarely needs editing)
+├── css/
+│   └── style.css       ← All visual design (colours, spacing, layout)
+├── js/
+│   ├── data.js         ← ⭐ YOUR CONTENT — edit this to update the site
+│   └── render.js       ← Builds the page from data.js (rarely needs editing)
+└── assets/
+    ├── cv.pdf          ← Drop your CV here
+    └── photo.jpg       ← Drop your profile photo here (optional)
+```
 
-## Status
+---
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-resume/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-resume.svg)](https://www.npmjs.com/package/startbootstrap-resume)
+## ✏️ How to update content
 
-## Download and Installation
+**All content lives in `js/data.js`.**
+Open it, find the section you want to change, edit the values, save — done.
 
-To begin using this template, choose one of the following options to get started:
+### Add a new publication
+```js
+publications: [
+  {
+    year:     "2027",                         // ← change year
+    title:    "Your new paper title",         // ← change title
+    venue:    "Journal Name · Authors",       // ← change venue
+    doi:      "https://doi.org/...",          // ← change DOI URL
+    doiLabel: "doi.org/...",                  // ← change display text
+  },
+  // existing papers below...
+],
+```
 
-- [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/resume/)
-- Install using npm: `npm i startbootstrap-resume`
-- Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-resume.git`
-- [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-resume)
+### Add a certificate
+```js
+certificates: [
+  {
+    icon:   "ti-cloud",              // Tabler icon name — see tabler.io/icons
+    name:   "AWS Solutions Architect",
+    issuer: "Amazon Web Services",
+    year:   "2026",
+    status: "completed",             // "completed" or "in-progress"
+  },
+],
+```
 
-## Usage
+### Add a skill group
+```js
+skills: [
+  { group: "New group name", items: ["Skill 1", "Skill 2", "Skill 3"] },
+],
+```
 
-### Basic Usage
+### Add a conference / talk
+```js
+conferences: [
+  {
+    icon:  "ti-presentation",
+    name:  "Conference Full Name",
+    paper: '"Your Paper Title"',
+    type:  "Paper presentation",
+    tags:  ["Month Year", "City or Online", "Extra tag"],
+  },
+],
+```
 
-After downloading, simply edit the HTML and CSS files included with `dist` directory. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+### Add a work experience entry
+```js
+experience: [
+  {
+    role:    "Job Title",
+    org:     "Company · Department",
+    date:    "Jan 2027 – Present",
+    desc:    "Short description of what you did.",
+    current: true,   // true = blue dot, false = grey dot
+  },
+],
+```
 
-### Advanced Usage
+---
 
-Clone the source files of the theme and navigate into the theme's root directory. Run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `package.json` file to see which scripts are included.
+## 🖼️ Adding your profile photo
 
-#### npm Scripts
+1. Put your photo in `assets/photo.jpg` (or .png)
+2. In `js/data.js`, set:
+   ```js
+   photo: "assets/photo.jpg",
+   ```
+3. The initials avatar will be replaced automatically.
 
-- `npm run build` builds the project - this builds assets, HTML, JS, and CSS into `dist`
-- `npm run build:assets` copies the files in the `src/assets/` directory into `dist`
-- `npm run build:pug` compiles the Pug located in the `src/pug/` directory into `dist`
-- `npm run build:scripts` brings the `src/js/scripts.js` file into `dist`
-- `npm run build:scss` compiles the SCSS files located in the `src/scss/` directory into `dist`
-- `npm run clean` deletes the `dist` directory to prepare for rebuilding the project
-- `npm run start:debug` runs the project in debug mode
-- `npm start` or `npm run start` runs the project, launches a live preview in your default browser, and watches for changes made to files in `src`
+---
 
-You must have npm installed in order to use this build environment.
+## 🎨 Changing colours
 
-## Bugs and Issues
+All colours are CSS variables in `css/style.css` at the top:
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-resume/issues) here on GitHub or leave a comment on the [theme overview page at Start Bootstrap](https://startbootstrap.com/theme/resume/).
+```css
+:root {
+  --blue:        #2563eb;   /* main accent */
+  --blue-dark:   #1d4ed8;   /* hover state */
+  --blue-light:  #eff6ff;   /* light backgrounds */
+  /* ... */
+}
+```
 
-## About
+Change `--blue` to any hex colour and the whole site updates.
 
-Start Bootstrap is an open source library of free Bootstrap themes and templates. All of the free themes and templates on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+---
 
-- <https://startbootstrap.com>
-- <https://twitter.com/SBootstrap>
+## 🚀 Deploying to GitHub Pages
 
-Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+Since you're already hosting on GitHub Pages:
 
-- <https://davidmiller.io>
-- <https://twitter.com/davidmillerhere>
-- <https://github.com/davidtmiller>
+1. Replace your existing files with these
+2. Make sure `index.html` is in the root of your repo
+3. Push to GitHub — your site updates automatically
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Or if you use a `docs/` folder:
+```
+docs/
+├── index.html
+├── css/style.css
+├── js/data.js
+├── js/render.js
+└── assets/
+```
 
-## Copyright and License
+---
 
-Copyright 2013-2023 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE) license.
+## 📱 Responsive behaviour
+
+| Screen      | Layout                                      |
+|-------------|---------------------------------------------|
+| Desktop     | Fixed sidebar + scrollable main content     |
+| Tablet      | Narrower sidebar (links hidden)             |
+| Mobile      | Sidebar hidden, top nav + profile card + horizontal pill nav |
+
+---
+
+## 🔧 Icons
+
+Icons are from [Tabler Icons](https://tabler.io/icons) — loaded via CDN.
+Browse the full set at tabler.io/icons and use the icon name like `ti-brain`, `ti-cloud`, etc.
