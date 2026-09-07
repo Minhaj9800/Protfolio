@@ -83,7 +83,7 @@
       <div class="avatar-wrap">${avatarHTML}</div>
       <div class="profile-name">${D.personal.name}</div>
       <div class="profile-role">${D.personal.role}</div>
-      <div class="profile-uni">${D.personal.university} · Canada PR</div>
+      <div class="profile-uni">${D.personal.university}</div>
       ${false ? `<div class="status-pill"><div class="status-dot"></div><div class="status-text">${D.personal.status}</div></div>` : ''}
       <p class="profile-bio">${D.about.paragraphs[0]}</p>
       <div class="hero-chips">${chips}</div>
@@ -171,8 +171,6 @@
               <span>${D.personal.role}</span>
               <div class="hero-title-sep"></div>
               <span>${D.personal.university}</span>
-              <div class="hero-title-sep"></div>
-              <span>Canada PR</span>
             </div>
           </div>
         </div>
@@ -356,7 +354,7 @@
   function buildFooter() {
     return `
       <footer class="footer">
-        <span class="footer-l">// ${D.personal.location} · Permanent Resident</span>
+        <span class="footer-l">// ${D.personal.location}</span>
         <div class="footer-r">
           <a href="https://${D.personal.scholar}"  target="_blank" rel="noopener">Scholar</a>
           <a href="https://${D.personal.github}"   target="_blank" rel="noopener">GitHub</a>
