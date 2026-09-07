@@ -191,14 +191,18 @@
   }
 
   function buildResearch() {
-    const paras = D.research.paragraphs
-      .map((p) => `<p class="hero-bio">${p}</p>`)
-      .join('<div style="height:12px"></div>');
+    const bodyParas = D.research.paragraphs.slice(0, -1);
+    const metaLine   = D.research.paragraphs[D.research.paragraphs.length - 1];
+
+    const bodyHtml = bodyParas
+      .map((p) => `<p class="research-bio">${p}</p>`)
+      .join("");
 
     return section("research", "00", D.research.heading, "", `
       <div class="research-subhead">${D.research.subheading}</div>
       <div class="research-tag">${D.research.tag}</div>
-      ${paras}
+      ${bodyHtml}
+      <p class="research-meta">${metaLine}</p>
     `);
   }
 
