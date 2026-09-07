@@ -37,6 +37,7 @@
 
       <nav class="sb-nav" aria-label="Page sections">
         <a class="sb-nav-item active" href="#about"><i class="ti ti-user" aria-hidden="true"></i>About</a>
+        <a class="sb-nav-item" href="#research"><i class="ti ti-flask" aria-hidden="true"></i>Research</a>
         <a class="sb-nav-item" href="#experience"><i class="ti ti-briefcase" aria-hidden="true"></i>Experience</a>
         <a class="sb-nav-item" href="#publications"><i class="ti ti-file-text" aria-hidden="true"></i>Publications</a>
         <a class="sb-nav-item" href="#conferences"><i class="ti ti-microphone" aria-hidden="true"></i>Conferences</a>
@@ -96,6 +97,7 @@
 
     const navItems = [
       ["#about",        "ti-user",        "About"],
+      ["#research",     "ti-flask",       "Research"],
       ["#experience",   "ti-briefcase",   "Experience"],
       ["#publications", "ti-file-text",   "Publications"],
       ["#conferences",  "ti-microphone",  "Conferences"],
@@ -114,6 +116,7 @@
     const main = $("main-content");
     main.innerHTML = `
       ${buildHero()}
+      ${buildResearch()}
       ${buildExperience()}
       ${buildPublications()}
       ${buildConferences()}
@@ -185,6 +188,18 @@
         </div>
       </div>
     `;
+  }
+
+  function buildResearch() {
+    const paras = D.research.paragraphs
+      .map((p) => `<p class="hero-bio">${p}</p>`)
+      .join('<div style="height:12px"></div>');
+
+    return section("research", "00", D.research.heading, "", `
+      <div class="research-subhead">${D.research.subheading}</div>
+      <div class="research-tag">${D.research.tag}</div>
+      ${paras}
+    `);
   }
 
   function buildExperience() {
@@ -298,11 +313,13 @@
 
   function buildSkills() {
     const groups = D.skills.map((g) => {
+      const pillClass = g.primary ? "skill-pill skill-pill-primary" : "skill-pill";
       const pills = g.items
-        .map((s, i) => `<span class="skill-pill" style="animation-delay:${0.05 + i * 0.05}s">${s}</span>`)
+        .map((s, i) => `<span class="${pillClass}" style="animation-delay:${0.05 + i * 0.05}s">${s}</span>`)
         .join("");
+      const groupClass = g.primary ? "skill-group skill-group-primary" : "skill-group";
       return `
-        <div class="skill-group">
+        <div class="${groupClass}">
           <div class="skill-group-label">${g.group}</div>
           <div class="skill-pills">${pills}</div>
         </div>

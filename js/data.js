@@ -18,22 +18,24 @@ const PORTFOLIO = {
   about: {
     greeting: "Applied Machine Learning Researcher",
     taglines: [
-      "Designing scalable machine learning systems at the intersection of time series analysis, clustering, and knowledge distillation.",
+      "Latent interest modeling · Auction price prediction · Deep temporal models for sequential data",
     ],
     paragraphs: [
-      `I'm an <strong>Applied Machine Learning researcher</strong> based in Canada, 
-      currently pursuing an MSc at UPEI as a <strong>Mitacs Accelerate Fellow</strong>. 
-      My research focuses on deep temporal models for sequential data — working across 
-      <strong>time series analysis, representation learning, and clustering</strong> — 
-      with a practical emphasis on <strong>knowledge distillation</strong> and building 
+      `I'm an <strong>Applied Machine Learning researcher</strong> based in Canada,
+      currently pursuing an MSc at UPEI as a <strong>Mitacs Accelerate Fellow</strong>.
+      My research focuses on deep temporal models for sequential data — working across
+      <strong>time series analysis, representation learning, and clustering</strong> —
+      with a practical emphasis on <strong>knowledge distillation</strong> and building
       systems that stay efficient under real-world constraints.`,
-  
-      `Building on a <strong>First Class Honours BSc</strong> from UPEI, I have published 
-      in <strong>IEEE, Springer, and MDPI</strong>, with conference presentations going 
-      back to my undergraduate years. Alongside my research, I work as a 
-      <strong>Solutions Analyst</strong> at UPEI, focused on <strong>Data Engineering</strong> and 
-      <strong>Enterprise Data Infrastructure</strong> — work that keeps my research grounded in what 
+
+      `Building on a <strong>First Class Honours BSc</strong> from UPEI, I have published
+      in <strong>IEEE, Springer, and MDPI</strong>, with conference presentations going
+      back to my undergraduate years. Alongside my research, I work as a
+      <strong>Solutions Analyst</strong> at UPEI, focused on <strong>Data Engineering</strong> and
+      <strong>Enterprise Data Infrastructure</strong> — work that keeps my research grounded in what
       actually runs in production.`,
+
+      `MSc supervised by Dr. Andrew Godbout, School of Mathematical and Computational Sciences, University of Prince Edward Island.`,
     ],
     chips: [
       { icon: "ti-cpu",             label: "Applied Machine Learning" },
@@ -44,12 +46,25 @@ const PORTFOLIO = {
     ],
   },
 
+  research: {
+    heading:    "Research",
+    subheading: "MSc Thesis — Online Auction End-Price Prediction",
+    tag:        "UPEI · Mitacs Accelerate · 2026–2027",
+    paragraphs: [
+      `My thesis develops a latent interest modeling framework to quantify hidden customer demand in online auctions — the silent signal that exists in page views, watchlist adds, and browsing patterns during periods when no bids are placed. Page-view capture is a confirmed data gap in the partner system — one this research directly addresses through new instrumentation. This non-bidding behaviour is hypothesized to be the strongest predictor of final auction prices, yet it is currently uncaptured in existing ML approaches to auction forecasting.`,
+
+      `The system architecture spans three layers: a real-time clickstream capture pipeline (AWS Kinesis → Lambda → S3) — fully implemented and load-tested as a proof of concept — a nightly feature compaction job producing per-lot latent interest scores, and a hybrid KF-LSTM forecasting model that combines Kalman filtering for noise handling with LSTM gating for sequential auction dynamics. A Temporal Fusion Transformer is evaluated as a competing baseline, with knowledge distillation used to produce a deployment-ready student model.`,
+
+      `Supervisor: Dr. Andrew Godbout · Partner: Viewbid Auctions`,
+    ],
+  },
+
   experience: [
     {
       role:    "Applied Machine Learning Researcher",
       org:     "UPEI · Mitacs Accelerate Fellow",
       date:    "Jan 2026 – Present",
-      desc:    "LSTM, GRU, and Transformer benchmarking for auction price prediction. Knowledge distillation for edge deployment on resource-constrained devices.",
+      desc:    "Investigating latent interest modeling as a novel measurement construct for auction end-price prediction — capturing hidden demand signals from non-bidding user behaviour during the quiet mid-auction period. Building a KF-LSTM hybrid forecasting model and benchmarking Temporal Fusion Transformers against time-series foundation models for sequential price prediction. Industry partner: Viewbid Auctions (Dartmouth, NS). Supervised by Dr. Andrew Godbout, UPEI.",
       current: true,   // true = solid blue dot, false = lighter dot
     },
     {
@@ -131,13 +146,6 @@ const PORTFOLIO = {
       year:    "2026",
       status:  "Completed",
     },
-    {
-      icon:    "ti-brain",
-      name:    "Machine Learning Specialization",
-      issuer:  "DeepLearning.AI | Stanford University",
-      year:    "2026",
-      status:  "in-progress",
-    },
   ],
   teaching: [
     {
@@ -175,10 +183,14 @@ const PORTFOLIO = {
   ],
 
   skills: [
-    { group: "Languages",  items: ["Python", "Java", "SQL", "R", "JavaScript", "C#", "PHP"] },
-    { group: "ML & data",  items: ["PyTorch", "scikit-learn", "Pentaho", "IBM Cognos", "PostgreSQL", "MSSQL"] },
-    { group: "Web & infra",items: ["Node.js", "Vue.js", "Docker", "Git", "Linux", "ASP.NET"] },
-    { group: "BI & ERP",   items: ["Ellucian CRM", "Colleague ERP", "OpenMetaData", "SchemaSpy"] },
+    { group: "ML & Research",             primary: true, items: ["Python", "PyTorch", "scikit-learn", "R", "SQL"] },
+    { group: "MLOps & Infrastructure",    items: ["AWS (Kinesis, Lambda, S3)", "Docker", "Git", "Linux", "DuckDB"] },
+    { group: "Data Engineering",          items: ["PostgreSQL", "MSSQL", "Node.js", "ETL pipelines"] },
+    { group: "Other Languages & Tools",   items: ["Java", "JavaScript", "C#", "PHP", "Vue.js", "ASP.NET"] },
+
+    // Removed from visible skills section (dilutes ML signal for NSERC/Big Tech audiences).
+    // Kept here, commented out, so the data can be restored later if needed.
+    // { group: "BI & ERP", items: ["IBM Cognos", "Pentaho", "Ellucian CRM", "Colleague ERP", "OpenMetaData", "SchemaSpy"] },
   ],
 
 
