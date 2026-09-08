@@ -38,13 +38,14 @@
       <nav class="sb-nav" aria-label="Page sections">
         <a class="sb-nav-item active" href="#about"><i class="ti ti-user" aria-hidden="true"></i>About</a>
         <a class="sb-nav-item" href="#research"><i class="ti ti-flask" aria-hidden="true"></i>Research</a>
+        <a class="sb-nav-item" href="#education"><i class="ti ti-book" aria-hidden="true"></i>Education</a>
         <a class="sb-nav-item" href="#experience"><i class="ti ti-briefcase" aria-hidden="true"></i>Experience</a>
         <a class="sb-nav-item" href="#publications"><i class="ti ti-file-text" aria-hidden="true"></i>Publications</a>
         <a class="sb-nav-item" href="#conferences"><i class="ti ti-microphone" aria-hidden="true"></i>Conferences</a>
         <a class="sb-nav-item" href="#certificates"><i class="ti ti-certificate" aria-hidden="true"></i>Certificates</a>
         <a class="sb-nav-item" href="#teaching"><i class="ti ti-school" aria-hidden="true"></i>Teaching</a>
-        <a class="sb-nav-item" href="#skills"><i class="ti ti-tool" aria-hidden="true"></i>Skills</a>
         <a class="sb-nav-item" href="#awards"><i class="ti ti-award" aria-hidden="true"></i>Awards</a>
+        <a class="sb-nav-item" href="#skills"><i class="ti ti-tool" aria-hidden="true"></i>Skills</a>
         <a class="sb-nav-item" href="#contact"><i class="ti ti-message" aria-hidden="true"></i>Contact</a>
       </nav>
 
@@ -98,13 +99,14 @@
     const navItems = [
       ["#about",        "ti-user",        "About"],
       ["#research",     "ti-flask",       "Research"],
+      ["#education",    "ti-book",        "Education"],
       ["#experience",   "ti-briefcase",   "Experience"],
       ["#publications", "ti-file-text",   "Publications"],
       ["#conferences",  "ti-microphone",  "Conferences"],
       ["#certificates", "ti-certificate", "Certificates"],
       ["#teaching",     "ti-school",      "Teaching"],
-      ["#skills",       "ti-tool",        "Skills"],
       ["#awards",       "ti-award",       "Awards"],
+      ["#skills",       "ti-tool",        "Skills"],
       ["#contact",      "ti-message",     "Contact"],
     ];
     $("mobile-nav").innerHTML = navItems
@@ -117,6 +119,7 @@
     main.innerHTML = `
       ${buildHero()}
       ${buildResearch()}
+      ${buildEducation()}
       ${buildExperience()}
       ${buildPublications()}
       ${buildConferences()}
@@ -202,6 +205,35 @@
       ${bodyHtml}
       <p class="research-meta">${metaLine}</p>
     `);
+  }
+
+  function buildEducation() {
+    const items = D.education.map((e, i) => {
+      const isLast = i === D.education.length - 1;
+      const dot = e.current
+        ? `<div class="exp-dot-wrap"><div class="exp-dot-ring"></div><div class="exp-dot"></div></div>`
+        : `<div class="exp-dot-sm"></div>`;
+      const line = isLast ? "" : `<div class="exp-line"></div>`;
+      const thesis = e.thesis ? `<div class="edu-thesis">${e.thesis}</div>` : "";
+      const badge = e.badge ? `<span class="edu-badge">${e.badge}</span>` : "";
+      return `
+        <div class="exp-item">
+          <div class="exp-timeline">${dot}${line}</div>
+          <div class="exp-content">
+            <div class="exp-role">${e.degree}</div>
+            <div class="exp-org">${e.org}</div>
+            <div class="exp-date"><i class="ti ti-calendar" aria-hidden="true"></i>${e.date}</div>
+            <div class="edu-areas">${e.areas}</div>
+            ${thesis}
+            <div class="edu-meta">
+              <span class="edu-supervisor">${e.supervisor}</span>
+              ${badge}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+    return section("education", "04", "Education", "", items);
   }
 
   function buildExperience() {

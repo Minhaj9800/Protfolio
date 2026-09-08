@@ -161,7 +161,7 @@ body::before {
   width: 232px; flex-shrink: 0;
   display: flex; flex-direction: column;
   border-right: 1px solid var(--border-base);
-  padding: 32px 18px 24px;
+  padding: 26px 18px 18px;
   background: linear-gradient(180deg, #0d1120 0%, var(--bg-base) 100%);
   position: sticky; top: 0; height: 100vh; overflow-y: auto;
 }
@@ -169,7 +169,7 @@ body::before {
 .sidebar::-webkit-scrollbar-thumb { background: var(--border-base); border-radius: 3px; }
 
 /* Sidebar avatar */
-.avatar-wrap { position: relative; width: 76px; height: 76px; margin: 0 auto 16px; }
+.avatar-wrap { position: relative; width: 76px; height: 76px; margin: 0 auto 14px; }
 .avatar {
   width: 76px; height: 76px; border-radius: 16px;
   background: linear-gradient(135deg, #1a2a4a, #0f1f3d);
@@ -191,9 +191,9 @@ body::before {
 
 .sb-name { font-size: 15px; font-weight: 700; text-align: center; color: var(--text-bright); letter-spacing: -0.02em; margin-bottom: 3px; }
 .sb-role { font-size: 13px; color: var(--accent); text-align: center; font-weight: 500; margin-bottom: 2px; }
-.sb-uni  { font-size: 13px; color: var(--text-secondary); text-align: center; margin-bottom: 12px; }
+.sb-uni  { font-size: 13px; color: var(--text-secondary); text-align: center; margin-bottom: 10px; }
 
-.sb-location { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 18px; }
+.sb-location { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 14px; }
 .sb-location-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 6px var(--teal); }
 .sb-location-text { font-family: var(--font-mono); font-size: 11px; color: var(--teal); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 
@@ -202,13 +202,13 @@ body::before {
 .status-dot  { display: none; }
 .status-text { display: none; }
 
-.sb-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-base), transparent); margin: 0 0 14px; }
+.sb-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-base), transparent); margin: 0 0 12px; }
 
 /* Sidebar nav*/
 .sb-nav { display: flex; flex-direction: column; gap: 1px; }
 .sb-nav-item {
   font-size: 14px; color: var(--text-secondary);
-  padding: 7px 10px; border-radius: 9px; cursor: pointer;
+  padding: 6px 10px; border-radius: 9px; cursor: pointer;
   display: flex; align-items: center; gap: 8px;
   font-weight: 500; border: 1px solid transparent;
   transition: all 0.15s;
@@ -224,6 +224,7 @@ body::before {
 .sb-nav-item:nth-child(8)  { animation-delay: 0.40s; }
 .sb-nav-item:nth-child(9)  { animation-delay: 0.45s; }
 .sb-nav-item:nth-child(10) { animation-delay: 0.50s; }
+.sb-nav-item:nth-child(11) { animation-delay: 0.55s; }
 .sb-nav-item i { font-size: 14px; flex-shrink: 0; }
 .sb-nav-item:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .sb-nav-item.active { color: var(--accent); background: var(--accent-light); border-color: var(--accent-border); font-weight: 600; }
@@ -383,6 +384,13 @@ body::before {
 .exp-org  { font-size: 13px; color: var(--accent); margin-bottom: 3px; font-weight: 500; }
 .exp-date { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
 .exp-desc { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+
+/* Education (reuses .exp-item / .exp-role / .exp-org / .exp-date from Experience) */
+.edu-areas { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin-bottom: 6px; }
+.edu-thesis { font-size: 13px; color: var(--accent); font-style: italic; line-height: 1.45; margin-bottom: 6px; }
+.edu-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.edu-supervisor { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); }
+.edu-badge { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--teal); background: var(--teal-bg); border: 1px solid var(--teal-border); padding: 2px 9px; border-radius: var(--radius-pill); white-space: nowrap; }
 
 /* Publications*/
 .pub-card { padding: 14px 16px; border: 1px solid var(--border-base); border-radius: var(--radius-lg); margin-bottom: 9px; background: var(--bg-card); position: relative; overflow: hidden; transition: border-color 0.2s; display: flex; gap: 14px; }

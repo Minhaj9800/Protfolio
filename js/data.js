@@ -24,7 +24,7 @@ const PORTFOLIO = {
       `I'm an <strong>Applied Machine Learning researcher</strong> based in Canada,
       currently pursuing an MSc at UPEI as a <strong>Mitacs Accelerate Fellow</strong>.
       My research focuses on deep temporal models for sequential data — working across
-      <strong>time series analysis, representation learning, and clustering</strong> —
+      <strong>time series forecasting, latent interest modeling, and clustering</strong> —
       with a practical emphasis on <strong>knowledge distillation</strong> and building
       systems that stay efficient under real-world constraints.`,
 
@@ -41,7 +41,7 @@ const PORTFOLIO = {
       { icon: "ti-cpu",             label: "Applied Machine Learning" },
       { icon: "ti-brain",           label: "Deep Learning"            },
       { icon: "ti-circles-relation",label: "Clustering"               },
-      { icon: "ti-chart-line",      label: "Time Series Analysis"     },
+      { icon: "ti-chart-line",      label: "Time Series Forecasting"  },
       { icon: "ti-topology-star",   label: "Distributed Computing"    },
     ],
   },
@@ -58,6 +58,27 @@ const PORTFOLIO = {
       `Supervisor: Dr. Andrew Godbout · Partner: Viewbid Auctions`,
     ],
   },
+
+  education: [
+    {
+      degree:     "Master of Science (MSc), Computer Science",
+      org:        "University of Prince Edward Island (UPEI) · Charlottetown, PEI, Canada",
+      date:       "January 2026 – Present",
+      current:    true,
+      areas:      "Research Areas: Latent Interest Modeling, Time Series Forecasting, Clustering, Knowledge Distillation",
+      supervisor: "Supervisor: Dr. Andrew Godbout, University of Prince Edward Island",
+      badge:      "Mitacs Accelerate Fellow",
+    },
+    {
+      degree:     "BSc (Honours) Computer Science — First Class Honours",
+      org:        "University of Prince Edward Island (UPEI) · Charlottetown, PEI, Canada",
+      date:       "September 2017 – 2022",
+      current:    false,
+      areas:      "Research Areas: Cloud-dew Architecture, Communication Protocol",
+      thesis:     "Thesis: Matrix-Mesh Communication Protocol Based on Dew Computing",
+      supervisor: "Supervisor: Dr. Yingwei Wang, University of Prince Edward Island",
+    },
+  ],
 
   experience: [
     {
