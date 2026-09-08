@@ -124,6 +124,13 @@ const PORTFOLIO = {
   conferences: [
     {
       icon:   "ti-presentation",
+      name:   "The 7th International Workshop on Dew Computing",
+      paper:  "\"Matrix-Mesh Communication Protocol\"",
+      type:   "Paper presentation",
+      tags:   ["April 2022", "Online", "Hybrid Mode"],
+    },
+    {
+      icon:   "ti-presentation",
       name:   "IEEE 45th Annual Computers, Software & Applications Conference",
       paper:  "\"Implementation of Dewblock Client on Mobile Platform\"",
       type:   "Paper presentation",
