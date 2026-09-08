@@ -1,6 +1,6 @@
-# Minhajur Rahman — Personal Portfolio Site
+# Minhajur Rahman: Personal Portfolio Site
 
-Personal portfolio site for Minhajur Rahman, presenting his academic research, education, and professional experience to NSERC scholarship reviewers and ML/Research Engineer recruiters.
+Personal portfolio site for Minhajur Rahman, presenting academic research, education, and professional experience.
 
 ## Live Site
 
@@ -22,15 +22,9 @@ The page is a single-page scroll with the following sections, in order:
 - Skills
 - Contact
 
-## Purpose
-
-This site serves two audiences at once: NSERC scholarship reviewers and ML/Research Engineer recruiters at technology companies. Content and visual hierarchy are deliberately designed for both.
-
-The Research section documents active MSc thesis work on auction end-price prediction at UPEI under the Mitacs Accelerate Fellowship.
-
 ## Tech Stack
 
-- Plain HTML, CSS, and vanilla JavaScript — no framework, no build step, no package manager
+- Plain HTML, CSS, and vanilla JavaScript - no framework, no build step, no package manager
 - `js/data.js` holds all content; `js/render.js` builds the page DOM from it at runtime
 - Google Fonts (DM Serif Display, DM Mono, Outfit), loaded via CSS `@import`
 - Tabler Icons webfont, loaded via CDN link in `index.html`
@@ -51,7 +45,7 @@ The site is hosted on GitHub Pages with a custom domain configured via the `CNAM
 
 ## License
 
-MIT License — the code is open source. The content (text, publications, personal information) is not.
+MIT License - the code is open source. The content (text, publications, personal information) is not.
 
 ## Note on Content
 
